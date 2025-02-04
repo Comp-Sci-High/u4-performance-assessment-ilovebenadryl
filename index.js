@@ -106,6 +106,14 @@ app.use((req, res, next) => {
 
   app.use(express.static(__dirname + "/public"))
 
+  app.get("/all", (request,response) =>{
+    response.render("overview.ejs", posts)
+    })
+
+    app.get("/post/:id", (request,response) =>{
+      const id = req.params.id
+    })
+
   app.get("/", (request,response) =>{
     response.render("index.html")
     })
