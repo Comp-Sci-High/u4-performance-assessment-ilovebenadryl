@@ -4,23 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>All Posts - InstaClone</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style2.css">
 </head>
 <body>
     <div class="container">
+        <% for (let i = 0; i < posts.length; i++) { %>
         <div class="post-card">
             <div class="post-header">
-                <img src="https://example.com/images/profile.jpg" alt="User Avatar" class="avatar">
-                <span class="username">fit_guru</span>
+                <img src="<%=posts[i].imageUrl2 %>" alt="User Avatar" class="avatar">
+                <h2 class= "username"><%=posts[i].username %></h2>
             </div>
-            <img src="https://example.com/images/workout1.jpg" alt="Post Image" class="post-image">
+            <img src="<%=posts[i].imageUrl %>" alt="Post Image" class="post-image">
             <div class="post-info">
-                <p class="caption"><strong>fit_guru</strong> Morning grind! 💪 #NoExcuses</p>
-                <p class="likes">❤️ 1,204 likes</p>
-                <p class="comments">💬 87 comments</p>
-                <p class="time">Posted on: 2025-02-02T08:15:00Z</p>
+                <p class="caption"><strong><%= posts[i].caption %></strong></p>
+                <p class="likes">♥<%= posts[i].likesCount %></p>
+               <% if (posts[i].commentsCount === 0 ) { %>
+                    <p class="comments">There are no comments. Be the first to comment!</p>
+               <% } else { %>
+                <p class="comments">💬<%= posts[i].commentsCount %></p>
+               <% } %>
+                <p class="time">⏰<%=posts[i].postTime %></p>
+                <a href="/post/<%=i  %>">More</a>
             </div>
         </div>
+        <%  } %>
     </div>
+
 </body>
 </html>
+
+<!-- https://chatgpt.com/share/67a036c8-5e90-8002-b123-99c13309d36a -->

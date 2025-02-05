@@ -4,36 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Post Details - InstaClone</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/style3.css">
 </head>
 <body>
     <div class="container">
+        
         <div class="post-detail-card">
             <div class="post-header">
-                <img src="https://example.com/images/profile.jpg" alt="User Avatar" class="avatar">
+                <img src="<%=imageUrl2 %>" alt="User Avatar" class="avatar">
                 <span class="username">fit_guru</span>
             </div>
 
             <!-- Dynamic Media Section (Image or Video) -->
             <div class="post-media">
-                <img src="https://example.com/images/workout1.jpg" alt="Post Image" class="post-image">
+                <img src="<%=imageUrl %>" alt="Post Image" class="post-image">
                 <!-- If it's a video, replace the above line with this: -->
                 <!-- <video controls class="post-video">
                     <source src="https://example.com/videos/workout.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video> -->
             </div>
-
+        
             <div class="post-info">
-                <p class="caption"><strong>fit_guru</strong> Morning grind! 💪 #NoExcuses</p>
-                <p class="likes">❤️ 1,204 likes</p>
-                <p class="comments">💬 87 comments</p>
-                <p class="time">📅 Posted on: 2025-02-02T08:15:00Z</p>
-                <p class="is-video">🎥 Is Video? <strong>No</strong></p>
+                <p class="caption"><strong>fit_guru</strong><%=caption %></p>
+                <p class="likes">♥<%=likesCount %></p>
             </div>
 
             <a href="/all" class="back-btn">⬅ Back to Posts</a>
         </div>
+       
     </div>
 </body>
 </html>
+<!-- https://chatgpt.com/share/67a036c8-5e90-8002-b123-99c13309d36a -->
